@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="514a2932-f0b8-4088-9852-9fef30084269" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a8bbb936-3837-4aa5-9fed-96c8cd08310d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:51769/InventoryService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/IISHostingDemo/InventoryService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="InventoryService.wsdl" MetadataType="Wsdl" ID="8102d57f-d199-49ff-b938-a0a6f823c218" SourceId="1" SourceUrl="http://localhost:51769/InventoryService.svc?wsdl" />
-    <MetadataFile FileName="InventoryService.xsd" MetadataType="Schema" ID="b3e6ea7c-f840-4898-b8db-f8a77f188377" SourceId="1" SourceUrl="http://localhost:51769/InventoryService.svc?xsd=xsd1" />
-    <MetadataFile FileName="InventoryService1.xsd" MetadataType="Schema" ID="811b6762-754e-44f0-b463-f9a80bc744b3" SourceId="1" SourceUrl="http://localhost:51769/InventoryService.svc?xsd=xsd2" />
-    <MetadataFile FileName="InventoryService2.xsd" MetadataType="Schema" ID="d69db316-7719-4ac4-b26a-a7a3e053d243" SourceId="1" SourceUrl="http://localhost:51769/InventoryService.svc?xsd=xsd0" />
-    <MetadataFile FileName="InventoryService.disco" MetadataType="Disco" ID="90fbe163-bcc7-4f04-8474-4655e8cee07e" SourceId="1" SourceUrl="http://localhost:51769/InventoryService.svc?disco" />
+    <MetadataFile FileName="InventoryService.xsd" MetadataType="Schema" ID="5bbdaefd-2d2b-4b41-b610-66a61869f018" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/InventoryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InventoryService.wsdl" MetadataType="Wsdl" ID="c6db7397-561b-434c-a517-f8432caa74f5" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/InventoryService.svc?wsdl" />
+    <MetadataFile FileName="InventoryService.disco" MetadataType="Disco" ID="25aa6dc5-89d1-4a02-bcff-2ee38d0a3309" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/InventoryService.svc?disco" />
+    <MetadataFile FileName="InventoryService1.xsd" MetadataType="Schema" ID="3c0ca9fe-bfa8-4b04-badb-1e457a6b40ed" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/InventoryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InventoryService2.xsd" MetadataType="Schema" ID="0f649989-d984-4d96-b897-636797fa0988" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/InventoryService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsClient.InventoryService {
+namespace WindowsClient.ProductService {
     using System.Runtime.Serialization;
     using System;
     
@@ -123,63 +123,49 @@ namespace WindowsClient.InventoryService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InventoryService.IInventoryService")]
-    public interface IInventoryService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProductService.IProductService")]
+    public interface IProductService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/GetInStock", ReplyAction="http://tempuri.org/IInventoryService/GetInStockResponse")]
-        short GetInStock(int productId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProduct", ReplyAction="http://tempuri.org/IProductService/GetProductResponse")]
+        WindowsClient.ProductService.Product GetProduct(int productId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/GetInStock", ReplyAction="http://tempuri.org/IInventoryService/GetInStockResponse")]
-        System.Threading.Tasks.Task<short> GetInStockAsync(int productId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/UpdateProduct", ReplyAction="http://tempuri.org/IInventoryService/UpdateProductResponse")]
-        bool UpdateProduct(WindowsClient.InventoryService.Product product);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/UpdateProduct", ReplyAction="http://tempuri.org/IInventoryService/UpdateProductResponse")]
-        System.Threading.Tasks.Task<bool> UpdateProductAsync(WindowsClient.InventoryService.Product product);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProduct", ReplyAction="http://tempuri.org/IProductService/GetProductResponse")]
+        System.Threading.Tasks.Task<WindowsClient.ProductService.Product> GetProductAsync(int productId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IInventoryServiceChannel : WindowsClient.InventoryService.IInventoryService, System.ServiceModel.IClientChannel {
+    public interface IProductServiceChannel : WindowsClient.ProductService.IProductService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class InventoryServiceClient : System.ServiceModel.ClientBase<WindowsClient.InventoryService.IInventoryService>, WindowsClient.InventoryService.IInventoryService {
+    public partial class ProductServiceClient : System.ServiceModel.ClientBase<WindowsClient.ProductService.IProductService>, WindowsClient.ProductService.IProductService {
         
-        public InventoryServiceClient() {
+        public ProductServiceClient() {
         }
         
-        public InventoryServiceClient(string endpointConfigurationName) : 
+        public ProductServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public InventoryServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public ProductServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public InventoryServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProductServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public InventoryServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public short GetInStock(int productId) {
-            return base.Channel.GetInStock(productId);
+        public WindowsClient.ProductService.Product GetProduct(int productId) {
+            return base.Channel.GetProduct(productId);
         }
         
-        public System.Threading.Tasks.Task<short> GetInStockAsync(int productId) {
-            return base.Channel.GetInStockAsync(productId);
-        }
-        
-        public bool UpdateProduct(WindowsClient.InventoryService.Product product) {
-            return base.Channel.UpdateProduct(product);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateProductAsync(WindowsClient.InventoryService.Product product) {
-            return base.Channel.UpdateProductAsync(product);
+        public System.Threading.Tasks.Task<WindowsClient.ProductService.Product> GetProductAsync(int productId) {
+            return base.Channel.GetProductAsync(productId);
         }
     }
 }

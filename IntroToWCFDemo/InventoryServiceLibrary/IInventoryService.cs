@@ -15,9 +15,6 @@ namespace InventoryServiceLibrary
         short GetInStock(int productId);
 
         [OperationContract]
-        Product GetProduct(int productId);
-
-        [OperationContract]
         bool UpdateProduct(Product product);
     }
 }

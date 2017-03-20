@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="008cfa1d-e00f-44e6-a021-6fe8eb898a28" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/IISHostingDemo/ProductService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProductService.disco" MetadataType="Disco" ID="c5ae4197-e3c8-4f61-a26d-9116e8346992" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/ProductService.svc?disco" />
+    <MetadataFile FileName="ProductService.xsd" MetadataType="Schema" ID="5d6cc751-f9f7-48b8-9410-8b36390d33a7" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/ProductService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="679e398a-03bd-4b11-93a8-3fe131e7f9ce" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/ProductService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductService.wsdl" MetadataType="Wsdl" ID="b32e9c5f-c744-4cf9-a500-e11690f2bfcc" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/ProductService.svc?wsdl" />
+    <MetadataFile FileName="ProductService2.xsd" MetadataType="Schema" ID="b0036d45-4898-4ff7-944d-7f0d4138c16d" SourceId="1" SourceUrl="http://localhost/IISHostingDemo/ProductService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
