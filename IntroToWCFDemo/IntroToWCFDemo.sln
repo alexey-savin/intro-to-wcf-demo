@@ -28,6 +28,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebHost", "WebHost\", "{30E
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsClient", "WindowsClient\WindowsClient.csproj", "{A2CD431A-8637-48C3-A78F-EECF918E1A65}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30E0D2BC-0130-4093-A476-9CA58EBE3A6B} = {30E0D2BC-0130-4093-A476-9CA58EBE3A6B}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +47,10 @@ Global
 		{30E0D2BC-0130-4093-A476-9CA58EBE3A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30E0D2BC-0130-4093-A476-9CA58EBE3A6B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{30E0D2BC-0130-4093-A476-9CA58EBE3A6B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A2CD431A-8637-48C3-A78F-EECF918E1A65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CD431A-8637-48C3-A78F-EECF918E1A65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CD431A-8637-48C3-A78F-EECF918E1A65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CD431A-8637-48C3-A78F-EECF918E1A65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
