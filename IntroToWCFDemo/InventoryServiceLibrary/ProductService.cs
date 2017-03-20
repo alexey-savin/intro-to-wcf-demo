@@ -27,8 +27,6 @@ namespace InventoryServiceLibrary
                             product.ProductId = productId;
                             product.ProductName = dataReader.GetString(0);
                             product.UnitPrice = dataReader.GetDecimal(1);
-                            product.UnitsInStock = dataReader.GetInt16(2);
-                            product.UnitsOnOrder = dataReader.GetInt16(3);
                         }
                     }
                 }

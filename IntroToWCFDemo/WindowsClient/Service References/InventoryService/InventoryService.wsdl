@@ -96,7 +96,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_GetInStock_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_GetInventory_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -115,7 +115,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_GetInStock_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_GetInventory_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -134,7 +134,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_UpdateProduct_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_UpdateInventory_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -153,7 +153,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_UpdateProduct_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IInventoryService_UpdateInventory_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -179,50 +179,50 @@
       <xsd:import schemaLocation="http://localhost/IISHostingDemo/InventoryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/InventoryServiceLibrary" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IInventoryService_GetInStock_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInStock" />
+  <wsdl:message name="IInventoryService_GetInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInventory" />
   </wsdl:message>
-  <wsdl:message name="IInventoryService_GetInStock_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInStockResponse" />
+  <wsdl:message name="IInventoryService_GetInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInventoryResponse" />
   </wsdl:message>
-  <wsdl:message name="IInventoryService_UpdateProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  <wsdl:message name="IInventoryService_UpdateInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInventory" />
   </wsdl:message>
-  <wsdl:message name="IInventoryService_UpdateProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  <wsdl:message name="IInventoryService_UpdateInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInventoryResponse" />
   </wsdl:message>
   <wsdl:portType name="IInventoryService">
-    <wsdl:operation name="GetInStock">
-      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/GetInStock" message="tns:IInventoryService_GetInStock_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/GetInStockResponse" message="tns:IInventoryService_GetInStock_OutputMessage" />
+    <wsdl:operation name="GetInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/GetInventory" message="tns:IInventoryService_GetInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/GetInventoryResponse" message="tns:IInventoryService_GetInventory_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/UpdateProduct" message="tns:IInventoryService_UpdateProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/UpdateProductResponse" message="tns:IInventoryService_UpdateProduct_OutputMessage" />
+    <wsdl:operation name="UpdateInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/UpdateInventory" message="tns:IInventoryService_UpdateInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/UpdateInventoryResponse" message="tns:IInventoryService_UpdateInventory_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IInventoryService" type="tns:IInventoryService">
     <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetInStock">
-      <soap12:operation soapAction="http://tempuri.org/IInventoryService/GetInStock" style="document" />
+    <wsdl:operation name="GetInventory">
+      <soap12:operation soapAction="http://tempuri.org/IInventoryService/GetInventory" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_GetInStock_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_GetInventory_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_GetInStock_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_GetInventory_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateProduct">
-      <soap12:operation soapAction="http://tempuri.org/IInventoryService/UpdateProduct" style="document" />
+    <wsdl:operation name="UpdateInventory">
+      <soap12:operation soapAction="http://tempuri.org/IInventoryService/UpdateInventory" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_UpdateProduct_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_UpdateInventory_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_UpdateProduct_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IInventoryService_UpdateInventory_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

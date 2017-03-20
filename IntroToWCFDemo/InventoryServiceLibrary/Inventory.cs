@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace InventoryServiceLibrary
 {
-    [DataContract]
-    public class Product
+    public class Inventory
     {
         [DataMember]
         public int ProductId { get; set; }
         [DataMember]
-        public string ProductName { get; set; }
+        public short UnitsInStock { get; set; }
         [DataMember]
-        public decimal UnitPrice { get; set; }
+        public short UnitsOnOrder { get; set; }
     }
 }

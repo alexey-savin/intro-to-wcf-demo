@@ -31,12 +31,6 @@ namespace WindowsClient.ProductService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal UnitPriceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short UnitsInStockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short UnitsOnOrderField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -82,32 +76,6 @@ namespace WindowsClient.ProductService {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short UnitsInStock {
-            get {
-                return this.UnitsInStockField;
-            }
-            set {
-                if ((this.UnitsInStockField.Equals(value) != true)) {
-                    this.UnitsInStockField = value;
-                    this.RaisePropertyChanged("UnitsInStock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short UnitsOnOrder {
-            get {
-                return this.UnitsOnOrderField;
-            }
-            set {
-                if ((this.UnitsOnOrderField.Equals(value) != true)) {
-                    this.UnitsOnOrderField = value;
-                    this.RaisePropertyChanged("UnitsOnOrder");
                 }
             }
         }

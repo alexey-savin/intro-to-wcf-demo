@@ -12,13 +12,13 @@ namespace InventoryServiceLibrary
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class InventoryService : IInventoryService
     {
-        public short GetInStock(int productId)
+        public Inventory GetInventory(int productId)
         {
-            short unitsInStock = 0;
+            var inventory = new Inventory();
 
             using (var cnn = new SqlConnection(Properties.Settings.Default.NothwindConnectionString))
             {
-                using (var cmd = new SqlCommand("SELECT UnitsInStock FROM Products WHERE ProductId = @productId", cnn))
+                using (var cmd = new SqlCommand("SELECT UnitsInStock, UnitsOnOrder FROM Products WHERE ProductId = @productId", cnn))
                 {
                     cmd.Parameters.Add(new SqlParameter("@productId", productId));
                     cnn.Open();
@@ -27,16 +27,18 @@ namespace InventoryServiceLibrary
                     {
                         while (dataReader.Read())
                         {
-                            unitsInStock = dataReader.GetInt16(0);
+                            inventory.ProductId = productId;
+                            inventory.UnitsInStock = dataReader.GetInt16(0);
+                            inventory.UnitsOnOrder = dataReader.GetInt16(1);
                         }
                     }
                 }
             }
 
-            return unitsInStock;
+            return inventory;
         }
 
-        public bool UpdateProduct(Product product)
+        public bool UpdateInventory(Inventory inventory)
         {
             int rowsChanges = 0;
 
@@ -44,12 +46,12 @@ namespace InventoryServiceLibrary
             {
                 using (var cmd = new SqlCommand("UPDATE Products SET UnitsInStock = @unitsInStock, UnitsOnOrder = @unitsOnOrder WHERE ProductId = @productId", cnn))
                 {
-                    cmd.Parameters.Add(new SqlParameter("@productId", product.ProductId));
-                    cmd.Parameters.Add(new SqlParameter("@unitsInStock", product.UnitsInStock));
-                    cmd.Parameters.Add(new SqlParameter("@unitsOnOrder", product.UnitsOnOrder));
+                    cmd.Parameters.Add(new SqlParameter("@productId", inventory.ProductId));
+                    cmd.Parameters.Add(new SqlParameter("@unitsInStock", inventory.UnitsInStock));
+                    cmd.Parameters.Add(new SqlParameter("@unitsOnOrder", inventory.UnitsOnOrder));
                     cnn.Open();
 
-                    rowsChanges = (int)cmd.ExecuteNonQuery();
+                    rowsChanges = cmd.ExecuteNonQuery();
                 }
             }
 

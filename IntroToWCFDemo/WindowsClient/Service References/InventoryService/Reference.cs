@@ -15,21 +15,15 @@ namespace WindowsClient.InventoryService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/InventoryServiceLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Inventory", Namespace="http://schemas.datacontract.org/2004/07/InventoryServiceLibrary")]
     [System.SerializableAttribute()]
-    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Inventory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ProductIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal UnitPriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short UnitsInStockField;
@@ -56,32 +50,6 @@ namespace WindowsClient.InventoryService {
                 if ((this.ProductIdField.Equals(value) != true)) {
                     this.ProductIdField = value;
                     this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductName {
-            get {
-                return this.ProductNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
-                    this.ProductNameField = value;
-                    this.RaisePropertyChanged("ProductName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal UnitPrice {
-            get {
-                return this.UnitPriceField;
-            }
-            set {
-                if ((this.UnitPriceField.Equals(value) != true)) {
-                    this.UnitPriceField = value;
-                    this.RaisePropertyChanged("UnitPrice");
                 }
             }
         }
@@ -126,17 +94,17 @@ namespace WindowsClient.InventoryService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InventoryService.IInventoryService")]
     public interface IInventoryService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/GetInStock", ReplyAction="http://tempuri.org/IInventoryService/GetInStockResponse")]
-        short GetInStock(int productId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/GetInventory", ReplyAction="http://tempuri.org/IInventoryService/GetInventoryResponse")]
+        WindowsClient.InventoryService.Inventory GetInventory(int productId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/GetInStock", ReplyAction="http://tempuri.org/IInventoryService/GetInStockResponse")]
-        System.Threading.Tasks.Task<short> GetInStockAsync(int productId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/GetInventory", ReplyAction="http://tempuri.org/IInventoryService/GetInventoryResponse")]
+        System.Threading.Tasks.Task<WindowsClient.InventoryService.Inventory> GetInventoryAsync(int productId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/UpdateProduct", ReplyAction="http://tempuri.org/IInventoryService/UpdateProductResponse")]
-        bool UpdateProduct(WindowsClient.InventoryService.Product product);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/UpdateInventory", ReplyAction="http://tempuri.org/IInventoryService/UpdateInventoryResponse")]
+        bool UpdateInventory(WindowsClient.InventoryService.Inventory inventory);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/UpdateProduct", ReplyAction="http://tempuri.org/IInventoryService/UpdateProductResponse")]
-        System.Threading.Tasks.Task<bool> UpdateProductAsync(WindowsClient.InventoryService.Product product);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInventoryService/UpdateInventory", ReplyAction="http://tempuri.org/IInventoryService/UpdateInventoryResponse")]
+        System.Threading.Tasks.Task<bool> UpdateInventoryAsync(WindowsClient.InventoryService.Inventory inventory);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -166,20 +134,20 @@ namespace WindowsClient.InventoryService {
                 base(binding, remoteAddress) {
         }
         
-        public short GetInStock(int productId) {
-            return base.Channel.GetInStock(productId);
+        public WindowsClient.InventoryService.Inventory GetInventory(int productId) {
+            return base.Channel.GetInventory(productId);
         }
         
-        public System.Threading.Tasks.Task<short> GetInStockAsync(int productId) {
-            return base.Channel.GetInStockAsync(productId);
+        public System.Threading.Tasks.Task<WindowsClient.InventoryService.Inventory> GetInventoryAsync(int productId) {
+            return base.Channel.GetInventoryAsync(productId);
         }
         
-        public bool UpdateProduct(WindowsClient.InventoryService.Product product) {
-            return base.Channel.UpdateProduct(product);
+        public bool UpdateInventory(WindowsClient.InventoryService.Inventory inventory) {
+            return base.Channel.UpdateInventory(inventory);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateProductAsync(WindowsClient.InventoryService.Product product) {
-            return base.Channel.UpdateProductAsync(product);
+        public System.Threading.Tasks.Task<bool> UpdateInventoryAsync(WindowsClient.InventoryService.Inventory inventory) {
+            return base.Channel.UpdateInventoryAsync(inventory);
         }
     }
 }

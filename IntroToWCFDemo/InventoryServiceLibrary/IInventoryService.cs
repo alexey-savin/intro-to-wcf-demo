@@ -12,9 +12,9 @@ namespace InventoryServiceLibrary
     public interface IInventoryService
     {
         [OperationContract]
-        short GetInStock(int productId);
+        Inventory GetInventory(int productId);
 
         [OperationContract]
-        bool UpdateProduct(Product product);
+        bool UpdateInventory(Inventory inventory);
     }
 }

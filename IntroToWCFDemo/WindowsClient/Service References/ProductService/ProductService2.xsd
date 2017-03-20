@@ -5,8 +5,6 @@
       <xs:element minOccurs="0" name="ProductId" type="xs:int" />
       <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
-      <xs:element minOccurs="0" name="UnitsInStock" type="xs:short" />
-      <xs:element minOccurs="0" name="UnitsOnOrder" type="xs:short" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
