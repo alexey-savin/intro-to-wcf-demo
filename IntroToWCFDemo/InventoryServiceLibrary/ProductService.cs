@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,15 +19,30 @@ namespace InventoryServiceLibrary
                 using (var cmd = new SqlCommand("SELECT ProductName, UnitPrice, UnitsInStock, UnitsOnOrder FROM Products WHERE ProductId = @productId", cnn))
                 {
                     cmd.Parameters.Add(new SqlParameter("@productId", productId));
-                    cnn.Open();
+
+                    try
+                    {
+                        cnn.Open();
+                    }
+                    catch
+                    {
+                        throw new FaultException("There was a problem connecting to the database");
+                    }   
 
                     using (var dataReader = cmd.ExecuteReader())
                     {
-                        while (dataReader.Read())
+                        try
                         {
-                            product.ProductId = productId;
-                            product.ProductName = dataReader.GetString(0);
-                            product.UnitPrice = dataReader.GetDecimal(1);
+                            while (dataReader.Read())
+                            {
+                                product.ProductId = productId;
+                                product.ProductName = dataReader.GetString(0);
+                                product.UnitPrice = dataReader.GetDecimal(1);
+                            }
+                        }
+                        catch
+                        {
+                            throw new FaultException("There was a problem reading from the database");
                         }
                     }
                 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,11 +41,19 @@ namespace WindowsClient
 
         private void buttonGetProduct_Click(object sender, EventArgs e)
         {
-            //_product = new Product();
-            //_product = _proxyProduct.GetProduct(Convert.ToInt32(textBoxProductId.Text));
+            _product = new Product();
 
-            //labelProductName.Text = _product.ProductName;
-            //labelUnitPrice.Text = _product.UnitPrice.ToString("C");
+            try
+            {
+                _product = _proxyProduct.GetProduct(Convert.ToInt32(textBoxProductId.Text));
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            labelProductName.Text = _product.ProductName;
+            labelUnitPrice.Text = _product.UnitPrice.ToString("C");
             //textBoxInStock.Text = _product.UnitsInStock.ToString();
             //labelInStock.Text = _product.UnitsInStock.ToString();
             //_inStockValue = _product.UnitPrice * Convert.ToDecimal(_product.UnitsInStock);
