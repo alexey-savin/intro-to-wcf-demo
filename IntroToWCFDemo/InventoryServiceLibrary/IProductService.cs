@@ -10,6 +10,8 @@ namespace InventoryServiceLibrary
     [ServiceContract]
     public interface IProductService
     {
+        [FaultContract(typeof(ConnectionFault))]
+        [FaultContract(typeof(DataReaderFault))]
         [OperationContract]
         Product GetProduct(int productId);
     }

@@ -39,17 +39,25 @@ namespace WindowsClient
             labelInStock.Text = $"{_proxyInventory.GetInventory(Convert.ToInt32(textBoxProductId.Text)).UnitsInStock} units are in stock";
         }
 
-        private void buttonGetProduct_Click(object sender, EventArgs e)
+        private async void buttonGetProduct_Click(object sender, EventArgs e)
         {
             _product = new Product();
 
             try
             {
-                _product = _proxyProduct.GetProduct(Convert.ToInt32(textBoxProductId.Text));
+                _product = await _proxyProduct.GetProductAsync(Convert.ToInt32(textBoxProductId.Text));
             }
-            catch (FaultException ex)
+            catch (FaultException<ConnectionFault> connectionFault)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"{connectionFault.Detail.Issue}. Try again later.\n\n{connectionFault.Detail.Details}", "Connection problem");
+            }
+            catch (FaultException<DataReaderFault> dataReaderFault)
+            {
+                MessageBox.Show($"{dataReaderFault.Detail.Issue}. Contact the administrator.\n\n{dataReaderFault.Detail.Details}", "Data problem");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Contact the administrator.\n\n{ex.Message}", "Unknown problem");
             }
 
             labelProductName.Text = _product.ProductName;

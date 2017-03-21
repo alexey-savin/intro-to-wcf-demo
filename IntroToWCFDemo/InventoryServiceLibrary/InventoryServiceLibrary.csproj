@@ -45,7 +45,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataMemeberAttribute.cs" />
+    <Compile Include="ConnectionFault.cs" />
+    <Compile Include="DataReaderFault.cs" />
     <Compile Include="IInventoryService.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="IProductService.cs" />

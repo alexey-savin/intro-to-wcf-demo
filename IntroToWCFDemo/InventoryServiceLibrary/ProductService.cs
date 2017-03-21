@@ -24,9 +24,15 @@ namespace InventoryServiceLibrary
                     {
                         cnn.Open();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        throw new FaultException("There was a problem connecting to the database");
+                        var connectionFault = new ConnectionFault
+                        {
+                            Issue = "Problem connecting to the database",
+                            Details = ex.Message
+                        };
+
+                        throw new FaultException<ConnectionFault>(connectionFault);
                     }   
 
                     using (var dataReader = cmd.ExecuteReader())
@@ -40,9 +46,15 @@ namespace InventoryServiceLibrary
                                 product.UnitPrice = dataReader.GetDecimal(1);
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            throw new FaultException("There was a problem reading from the database");
+                            var dataReaderFault = new DataReaderFault
+                            {
+                                Issue = "Problem reading the database",
+                                Details = ex.Message
+                            };
+
+                            throw new FaultException<DataReaderFault>(dataReaderFault);
                         }
                     }
                 }
